@@ -8,8 +8,8 @@ dp = Dispatcher(bot)
 
 
 @dp.message_handler()
-async def echo(message: types.Message):
-    await message.answer(text=message.text)
+async def echo_capitalize(message: types.Message):
+    await message.answer(text=message.text.upper())
     
 
 if __name__ == "__main__":
