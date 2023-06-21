@@ -8,9 +8,13 @@ dp = Dispatcher(bot)
 
 
 @dp.message_handler()
-async def echo_capitalize(message: types.Message):
-    await message.answer(text=message.text.upper())
-    
+async def echo_upper(message: types.Message):
+    if message.text.count(' ') >= 1:
+        await message.answer(text=message.text)
+    else:
+        await message.answer(text='Ошибка!')
 
 if __name__ == "__main__":
     executor.start_polling(dp)
+    
+#hello!
